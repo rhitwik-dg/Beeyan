@@ -1,3 +1,13 @@
+const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('transition-all');
+            mobileMenu.classList.toggle('duration-300');
+            mobileMenu.classList.toggle('ease-in-out');
+        });
+
 function switchTab(tabId) {
     // Hide all tab contents
     document.querySelectorAll('.tab-content').forEach(content => {
@@ -45,3 +55,4 @@ document.getElementById('faq-container').addEventListener('click', (e) => {
         plusMinus.textContent = '+';
     }
 });
+
