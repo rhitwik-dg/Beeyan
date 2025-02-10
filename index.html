@@ -125,7 +125,7 @@
     </section>
 
     <section class="workshops">
-    <div class="relative w-[70%] mx-auto mb-20">
+    <div class="relative w-[70%] mx-auto mb-20 hide-file">
         <img src="sadhguru section.png" alt="Yoga Practice" class="w-full rounded-lg">
         <div class="absolute top-0 right-0 w-1/2 h-full flex items-center">
             <div class="bg-opacity-0 p-8 rounded-lg">
@@ -137,10 +137,29 @@
         </div>
     </div>
 
+    <body class="m-0 p-0">
+        <div class="block md:hidden relative bg-contain bg-no-repeat bg-center h-[70vh]" style="background-image: url('for\ mobile\ sadhguru.png')">
+            <div class="absolute inset-0 bg-black bg-opacity-0 flex flex-col justify-end p-12 text-white" style="
+            height: 570px;">
+                <div class="text-center">
+                    <p class="text-2xl font-bold mb-4">Learn Classical Hatha Yoga from teachers certified by Sadhguru Gurukulam</p>
+                    
+                    <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-6">
+                        <p class="text-base">Surya Kriya, Yogasanas, Pranayama Bhuta, Shuddhi, Bhastrika, Meditations & more</p>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <p class="text-sm">Suitable for Beginners | Age group 14+</p>
+                        <p class="text-sm font-bold">Separate batches for Kids</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <!-- Section 3 -->
     <div class="max-w-3xl mx-auto">
         <!-- Tabs -->
-        <div class="flex justify-center gap-4 mb-8">
+        <div class="flex justify-center gap-4 mb-8 worktabs">
             <button 
                 class="tab-btn bg-gray-100 px-8 py-3 rounded-full hover:bg-[#cafceb] transition-colors active"
                 onclick="switchTab('workshops')">
