@@ -1,0 +1,81 @@
+import React, { useState } from 'react';
+import { Phone, ChevronDown } from 'lucide-react';
+
+const NavDropdown = ({ title, items }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="relative" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
+      <button className="flex items-center space-x-1 px-4 py-2">
+        <span>{title}</span>
+        <ChevronDown className="w-4 h-4" />
+      </button>
+      
+      {isOpen && (
+        <div className="absolute top-full left-0 bg-white shadow-lg rounded-md py-2 min-w-[200px] z-50">
+          {items.map((item, index) => (
+            <a 
+              key={index}
+              href="#" 
+              className="block px-4 py-2 hover:bg-gray-100 text-gray-700"
+            >
+              {item}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const Header = () => {
+  const workshopsDropdown = ["batch timings", "memberships"];
+  const practicesDropdown = [
+    "Bhuta Shuddhi",
+    "Yogasanas",
+    "Surya Kriya",
+    "Angamardana",
+    "See all practices"
+  ];
+
+  return (
+    <header className="bg-white shadow-sm">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="w-12 h-12 bg-gray-100 flex items-center justify-center">
+            <svg className="w-6 h-6 text-gray-400" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/>
+            </svg>
+          </div>
+
+          {/* Navigation */}
+          <nav className="flex items-center space-x-2">
+            <a href="#" className="px-4 py-2 text-gray-700">Home</a>
+            
+            <NavDropdown 
+              title="Workshops" 
+              items={workshopsDropdown}
+            />
+            
+            <NavDropdown 
+              title="Practices" 
+              items={practicesDropdown}
+            />
+            
+            <a href="#" className="px-4 py-2 text-gray-700">Contact</a>
+            <a href="#" className="px-4 py-2 text-gray-700">About Us</a>
+          </nav>
+
+          {/* Phone Number */}
+          <div className="flex items-center space-x-2 text-gray-700">
+            <Phone className="w-5 h-5" />
+            <span>9137163592</span>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
